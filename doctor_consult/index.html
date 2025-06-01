@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="consultApp">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body ng-controller="ConsultController">
+    <header>
+      <div class="navbar">
+        <div class="brand">Book Appointment</div>
+        <div class="navitems">
+          <a href="../index.html">Home</a>
+          <a href="../quiz-module/index.html">Take Quiz Again?</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <h2>Doctor Details</h2>
+      <div class="doctor-details">
+        <p><strong>Name:</strong> {{ doctor.name }}</p>
+        <p><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+        <p><strong>Location:</strong> {{ doctor.location }}</p>
+        <p><strong>Phone:</strong> {{ doctor.phone }}</p>
+        <p><strong>Email:</strong> {{ doctor.email }}</p>
+        <p>
+          <strong>Availability:</strong> {{ doctor.availability1 }} and {{
+          doctor.availability2 }}
+        </p>
+        <p><strong>Charge Per Hour:</strong> {{ doctor.chargePerHour }}</p>
+      </div>
+
+      <h2>Book Appointment with {{ doctor.name }}</h2>
+      <form ng-submit="submitForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="user.name" required /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="user.email" required /><br />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" ng-model="user.phone" required /><br />
+
+        <label for="date">Preferred Visitation Dates:</label>
+        <select id="date" ng-model="user.date" required>
+          <option value="">Select</option>
+          <option value="Immediately">Immediately</option>
+          <option value="Within a week">Within a week</option>
+          <option value="Within a fortnight">Within a fortnight</option>
+          <option value="Within a month">Within a month</option>
+          <option value="Flexible Options">Flexible Options</option>
+        </select>
+
+        <label for="time">Preferred Time:</label>
+        <select id="time" ng-model="user.time" required>
+          <option value="">Select a time</option>
+          <option value="9 AM - 11 AM">9 AM - 11 AM</option>
+          <option value="12 PM - 2 PM">12 PM - 2 PM</option>
+          <option value="3 PM - 5 PM">3 PM - 5 PM</option>
+          <option value="6 PM - 8 PM">6 PM - 8 PM</option></select
+        ><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="therapistApp">
+<head>
+    <title>Our Therapists</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/service.css"> 
+    <link rel="stylesheet" href="styles/navbar.css">
+</head>
+<body ng-controller="TherapistController">
+    <div class="container therapists">
+        <header>
+            <nav class="navbar">
+                <div class="brand">Our Experienced Doctors.</div>
+                <div class="navitems">
+                    <a href="index.html">Home</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="admin-module/index.html" target="_blank">Admin</a>
+                </div>
+            </nav>
+        </header>
+        
+        <h2></h2><br/>
+
+        <div class="row">
+            <div class="col-md-4 therapist" ng-repeat="therapist in therapists">
+                <img ng-src="styles/{{ therapist.image }}" alt="{{ therapist.name }}">
+                <a href="#" class="chat-button" ng-click="openChat(therapist)">
+                    <h3>{{ therapist.name }}</h3>
+                </a>
+                <p>{{ therapist.city }}</p>
+                <p>{{ therapist.description }}</p>
+                <a href="quiz-module/index.html" class="book-button">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&#x2042; To chat with a doctor, click on their name. Available instantaneously.</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('therapistApp', [])
+    .controller('TherapistController', ['$scope', '$window', function($scope, $window) {
+        $scope.therapists = [
+            {
+                name: "Dr. Sarah Jones",
+                city: "New York City",
+                description: "Experienced psychologist specializing in anxiety and stress management.",
+                image: "psychologist1.jpg" 
+            },
+            {
+                name: "Dr. John Smith",
+                city: "Los Angeles",
+                description: "Licensed therapist with expertise in relationship counseling and grief support.",
+                image: "psychologist2.jpg"
+            },
+            {
+                name: "Dr. David Brown",
+                city: "Chicago",
+                description: "Clinical psychologist specializing in cognitive behavioral therapy (CBT).",
+                image: "psychologist3.jpg"
+            },
+            {
+                name: "David Lee",
+                city: "San Francisco",
+                description: "Licensed therapist focusing on mindfulness and stress reduction techniques.",
+                image: "therapist1.png"
+            },
+            {
+                name: "Oliver Garcia",
+                city: "Houston",
+                description: "Experienced therapist specializing in trauma-informed care and PTSD.",
+                image: "therapist2.png"
+            },
+            {
+                name: "Sophia Rodriguez",
+                city: "Miami",
+                description: "Licensed therapist with expertise in family therapy and child development.",
+                image: "therapist3.png"
+            }
+        ];
+
+        $scope.openChat = function(therapist) {
+            var chatUrl = `chat-module/index.html?doctor=${encodeURIComponent(therapist.name)}&city=${encodeURIComponent(therapist.city)}&description=${encodeURIComponent(therapist.description)}`;
+            $window.open(chatUrl, '_blank');
+        };
+    }]);
+    </script>
+</body>
+</html>

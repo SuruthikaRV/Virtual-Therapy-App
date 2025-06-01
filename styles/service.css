@@ -1,0 +1,53 @@
+.therapists {
+    padding: 2rem;
+    text-align: center;
+}
+
+.therapists h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.therapist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.therapist img {
+    width: 200px;
+    height: 200px; /* Add a fixed height */
+    border-radius: 50%;
+    object-fit: cover; /* Scale the image to cover the container */
+}
+
+
+.therapist h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.therapist p {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.book-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5%;
+    background-color: rgb(62, 167, 237);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: rgb(62, 167, 237);
+}

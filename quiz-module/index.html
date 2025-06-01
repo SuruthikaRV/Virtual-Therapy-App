@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="quizApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Therapy Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.22.0/select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.22.0/select.min.js"></script>
+    <style>
+        fieldset {
+            border: 2px solid rgb(62, 167, 237);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body ng-controller="QuizController">
+    <header>
+        <div class="navbar">
+            <div class="brand">Therapy Quiz</div>
+            <div class="navitems">
+                <span class="quiz-score">Quiz Score: {{ quizScore }}</span>
+                <a href="../index.html">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="quiz">
+            <div class="form-box">
+                <form ng-submit="submitForm()">
+                    <div class="question">
+                        <label for="feeling">How are you feeling?</label><br>
+                        <div class="feeling-slider">
+                            <input type="range" id="feeling" ng-model="formData.feeling" min="1" max="5" step="1" required>
+                            <div class="slider-terms">
+                                <span class="term" ng-class="{ 'active': formData.feeling == 1 }">Good</span>
+                                <span class="term" ng-class="{ 'active': formData.feeling == 2 }">Fine</span>
+                                <span class="term" ng-class="{ 'active': formData.feeling == 3 }">Pretty Good</span>
+                                <span class="term" ng-class="{ 'active': formData.feeling == 4 }">Not Bad</span>
+                                <span class="term" ng-class="{ 'active': formData.feeling == 5 }">Worse</span>
+                            </div>
+                        </div>  
+                    </div><br>
+                    
+                    <div class="question">
+                        <label for="goals">What brings you to therapy?</label>
+                        <select id="goals" ng-model="formData.goals" required>
+                            <option value="">Select an option...</option>
+                            <option value="Anxiety management and coping strategies">Anxiety management and coping strategies</option>
+                            <option value="Grief and closure support">Grief and closure support</option>
+                            <option value="Addressing depression">Addressing depression</option>
+                            <option value="Boosting self-esteem">Boosting self-esteem</option>
+                            <option value="Workplace stress relief">Workplace stress relief</option>
+                            <option value="To save our struggling marriage">To save our struggling marriage</option>
+                            <option value="For insomnia and sleep improvement">For insomnia and sleep improvement</option>
+                            <option value="For healing past childhood trauma">For healing past childhood trauma</option>
+                            <option value="Enhancing relationships">Enhancing relationships</option>
+                            <option value="To conquer life's overwhelming challenges">To conquer life's overwhelming challenges</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question" ng-controller="SymptomController">
+                        <label for="symptoms">What symptoms or challenges are you currently experiencing?</label>
+                        <div class="symptom-inputs">
+                            <div ng-repeat="symptom in formData.symptoms">
+                                <input type="text" ng-model="symptom.value" placeholder="Symptom 1, Symptom 2...." ng-listen-input>
+                            </div>
+                        </div>
+                    </div>                                        
+                    
+                    <div class="question">
+                        <label for="previous-experience">Have you had any previous experiences with therapy or mental health treatment?</label>
+                        <input type="text" id="previous-experience" ng-model="formData.previousExperience">
+                    </div>
+                    
+                    <div class="question">
+                        <label for="relationships">How are your current relationships with family, friends, or significant others?</label>
+                        <input type="text" id="relationships" ng-model="formData.relationships">
+                    </div>
+                    
+                    <button class="submit-button" type="submit" ng-disabled="quizCompleted">{{ submitButtonText }}</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

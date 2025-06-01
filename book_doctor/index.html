@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="doctorApp">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="DoctorController">
+    <header>
+        <div class="navbar">
+            <div class="brand">Doctor Information</div>
+            <div class="navitems">
+                <a href="../index.html">Home</a>
+                <a href="../quiz-module/index.html">Take Quiz Again?</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="top-section">
+            <div class="top-value">You rank at: {{ userRank }}</div> 
+        </div>
+        <div class="doctor-cards">
+            <div class="card" ng-repeat="doctor in doctors" ng-class="{ 'highlight': doctor.Rank === userRank }">
+                <div class="card-header">{{ doctor.Name }}</div>
+                <div class="card-content">
+                    <p>Specialization: {{ doctor.Specialization }}</p>
+                    <p>Location: {{ doctor.Location }}</p>
+                    <p>Phone: {{ doctor.Phone }}</p>
+                    <p>Email: {{ doctor.Email }}</p>
+                    <p>Availability: {{ doctor['Availability-1'] }} and {{ doctor['Availability-2'] }}</p>
+                    <p>Charge Per Hour: {{ doctor['Charge per Hour'] }}</p>
+                    <p>Rank: {{ doctor.Rank }}</p>
+                    <center>
+                        <button class="check-availability" 
+                                ng-click="checkAvailability(doctor)"
+                                ng-class="{ 'unavailable': doctor.Rank !== userRank }"> 
+                            {{ doctor.Rank !== userRank ? 'Unavailable' : 'Check Availability' }}
+                        </button>
+                        <p ng-show="doctor.showAvailabilityStatus" 
+                           ng-class="{ 'available': doctor.isAvailable, 'unavailable': !doctor.isAvailable }">
+                            {{ doctor.availabilityStatus }}
+                        </p>
+                        <button ng-show="doctor.showBookButton" ng-click="bookNow(doctor)">Book Now</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

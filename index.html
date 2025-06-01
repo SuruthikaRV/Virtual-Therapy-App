@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="virtuWellApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtuWell</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MainController">
+    
+    <header>
+        <nav class="navbar">
+            <div class="brand">VirtuWell.</div>
+            <div class="navitems">
+                <a href="#">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="admin-module/index.html" target="_blank">ADMIN</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <div class="heading">
+            <h1>Your <b>Mental Health</b> Matters</h1>
+            <button class="btn member"><a href="service.html" target="_blank">Consult a Doctor</a></button>
+            <button class="btn consult"><a href="quiz-module/index.html" target="_blank">Take a free quiz</a></button>
+        </div>
+        <img class="illustration" src="styles/bg.png" alt="">
+    </section>
+</body>
+</html>

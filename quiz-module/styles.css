@@ -1,0 +1,298 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: rgb(62, 167, 237);
+    color: white;
+    padding: 1rem 0;
+}
+
+.brand{
+    font-size: 2.5rem;
+    font-weight: 450;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgb(62, 167, 237);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.navitems a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    font-weight: 600;
+}
+
+/* Main Quiz Styles */
+.quiz {
+    text-align: center;
+    padding: 2rem;
+}
+
+.quiz h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.form-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: #333;
+}
+.feeling-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feeling-slider input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: #ccc;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.feeling-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(62, 167, 237);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feeling-slider input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background: rgb(62, 167, 237);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-terms {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.term {
+    flex: 1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.term.active {
+    color: rgb(62, 167, 237);
+}
+
+/* Adjust the terms alignment */
+.term:first-child {
+    text-align: left;
+}
+
+.term:last-child {
+    text-align: right;
+}
+
+/* Adjust the middle terms alignment */
+.term:nth-child(2) {
+    text-align: left;
+    margin-left: 4.5%;
+}
+
+.term:nth-child(4) {
+    text-align: right;
+    margin-right: 2%;
+}
+select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("arrow.png") no-repeat right center; /* Add an arrow image */
+    background-size: 20px; /* Adjust arrow image size */
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    text-align: center;
+}
+
+.button-group button {
+    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
+    border: none;
+    border-radius: 0.3rem;
+    background-color: rgb(62, 167, 237);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none; /* Remove button outline when clicked */
+    white-space: nowrap; /* Prevent line breaks */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed content */
+    overflow: hidden; /* Hide overflowing content */
+    min-width: 120px; /* Set a minimum width to avoid excessive shrinking */
+}
+.button-group button.selected {
+    background-color: #071620;
+}
+.button-group button:hover {
+    background-color: #2288cc;
+}
+.symptom-inputs input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.symptom-inputs button[ng-click="addSymptom()"] {
+    background-color: rgb(62, 167, 237);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Adjust padding for better appearance */
+    margin-top: 10px; /* Adjust margin for spacing */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem; /* Adjust font size */
+    font-weight: 600; /* Adjust font weight */
+}
+
+
+/* Style for "Remove" button */
+.symptom-inputs button[ng-click="removeSymptom($index)"] {
+    background-color: #ff7f7f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Adjust padding for better appearance */
+    margin-top: 10px; /* Adjust margin for spacing */
+    margin-left: 10px; /* Add some space between "Remove" buttons */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem; /* Adjust font size */
+    font-weight: 600; /* Adjust font weight */
+}
+
+
+/* Hover styles for buttons */
+.symptom-inputs button:hover {
+    background-color: #176aae;
+}
+
+
+/* Submit Button Styles */
+.submit-button {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    background-color: rgb(62, 167, 237);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #2288cc;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgb(62, 167, 237);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+footer a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}

@@ -1,0 +1,170 @@
+header {
+    background-color: rgb(62, 167, 237);
+    color: white;
+    padding: 1rem 0;
+}
+
+.brand {
+    font-size: 2.5rem;
+    font-weight: 450;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgb(62, 167, 237);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.navitems a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    font-weight: 600;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.top-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.top-value {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.doctor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px); /* Three cards per row */
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007e07;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Highlighted card style */
+.card.highlight {
+    border: 2px solid #007e07;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the content inside the cards */
+.card-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    margin: 0.5rem 0;
+}
+
+.availability-button {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.check-availability {
+    background-color: #007e07; /* Green color for available */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.check-availability.unavailable {
+    background-color: #e60000; /* Red color for unavailable */
+    cursor: not-allowed;
+}
+
+.check-availability.available + .book-now {
+    display: none;
+}
+
+.book-now {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.book-button {
+    background-color: #007e07; /* Green color for book button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-button:hover {
+    background-color: #005c05; /* Darker green color on hover */
+}
+
+footer {
+    background-color: rgb(62, 167, 237);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+footer a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.book-button {
+    background-color: #007e07; /* Green color for book button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.unavailable {
+    background-color: #e60000; /* Red color for unavailable */
+    cursor: not-allowed;
+}
